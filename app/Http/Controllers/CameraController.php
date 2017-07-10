@@ -15,7 +15,8 @@ class CameraController extends Controller
      */
     public function index()
     {
-        return Camera::all();
+        $camera = Camera::all();
+        return response()->json(['cameras'=>$camera->toArray()], 200);
     }
 
     /**
